@@ -1,6 +1,6 @@
 'use strict';
 $(document).ready(function() {
-
+    //Array of quiz questions:
     const quizQuestions = [
         {
             question: "Inside which HTML element do we put the JavaScript?",
@@ -53,11 +53,45 @@ $(document).ready(function() {
             correctAnswer: "d"
         }
     ];
-
+    //jQuery hooks for HTML elements
     const questionContainer = $("div.questions");
-    const answers = $("div.answers");
-    const results = $("div.results");
+    const answerContainer = $("div.answers");
+    const resultsContanier = $("div.results");
 
-    
+    //Beginning of the quiz
+    function startQuiz() {
+
+        //Store output
+        let qOutput = [];
+        
+        quizQuestions.forEach(function(currentQuestion, questionNumber) {
+            let answers = [];
+
+            for(letter in currentQuestion.answers) {
+                //add button for each answer
+                answers.push(
+                    `<label><input class="answerButton" type="button" name="question${questionNumber}" value=${letter}">${letter} : 
+                    ${currentQuestion.answers[letter]}</label>`
+                );
+            }
+
+            //Put question and it's answers to the output
+            qOutput.push(
+                `<div class"question"> ${currentQuestion.question} </div>
+                <div class="answers"> ${answers.join('')} </div>`
+            );
+        });
+
+        questionContainer.innerHTML = qOutput.join('');
+    }
+
+        function showAnwers() {
+
+        }
+
+
+
+    }
+
 
 });
