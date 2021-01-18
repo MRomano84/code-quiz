@@ -1,0 +1,11 @@
+body {
+    margin-top: 100px;
+    padding: 0;
+    height: 100%;
+    width: auto;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
