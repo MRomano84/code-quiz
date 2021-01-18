@@ -47,12 +47,28 @@ $(document).ready(function () {
             correctAnswer: 4
         }
     ];
-    
-    function startGame() {
 
-    }
+    startQuiz.addEventListener("click", function() {
+        quizArrayIndex = 0;
+        hideStart[0].style.display = "none";
+        timer();
+        showQuestion();
+    });
+
+    viewScores.addEventListener('click', function () {
+        hideStart[0].style.display = 'none';
+        getScore();
+        scoreBoard();
+    });
+    
+    function timer() {
+        callCountdown = setTimeout(countdown, 1000);
+        if (remainingTime < 1 || quizArrayIndex > quizQuestions.length - 1) {
+            endGame();
+        }:
+    }:
         
-    function displayText() {
+    function countdown() {
         
     }
     
