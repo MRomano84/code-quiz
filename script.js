@@ -1,97 +1,50 @@
 'use strict';
-$(document).ready(function() {
-    //Array of quiz questions:
+$(document).ready(function () {
+
+    //initial Variables 
+    let quizArrayIndex;
+    let remainingTime = 60;
+    let highscores = document.getElementById("highscores");
+    let beginningScreen = document.getElementsByClassName(".beginningScreen");
+    let quizArea = document.getElementsByClassName(".quizArea");
+
+
+
+    //Array of quiz questions, possible answers and the correct answer.
     const quizQuestions = [
         {
             question: "Inside which HTML element do we put the JavaScript?",
-            answers: {
-                a: "<js>",
-                b: "<javascript>",
-                c: "<script",
-                d: "<scripting>"
-            },
-            correctAnswer: "c"
+            answers: ["1: <js>","2: <javascript>", "3: <script >", "4: <scripting>"],
+            correctAnswer: 3
         },
         {
             question: "Which operator is used to assign a value to a variable?",
-            answers: {
-                a: "*",
-                b: "+",
-                c: "%",
-                d: "="
-            },
-            correctAnswer: "d"
+            answers: ["1: *", "2: +", "3: %", "4: ="],
+            correctAnswer: 4
         },
         {
             question: "How can you add a comment in JavaScript?",
-            answers: {
-                a: "'Comment'",
-                b: "//Comment",
-                c: "<!--Comment-->",
-                d: "**Comment**"
-            },
-            correctAnswer: "b"
+            answers: ["1: 'Comment'", "2: //Comment", "3: <!--Comment-->", "4: **Comment**"],
+            correctAnswer: 2
         },
         {
             question: "Which event occurs when the user clicks on an HTML element?",
-            answers: {
-                a: "onclick",
-                b: "onmouseclick",
-                c: "onmouseover",
-                d: "onchange"
-            },
-            correctAnswer: "a"
+            answers: ["1: onclick", "2: onmouseclick","3: onmouseover", "4: onchange"],
+            correctAnswer: 1
         },
         {
             question: "Which of these words are not reserved in JavaScript?",
-            answers: {
-                a: "package",
-                b: "const",
-                c: "function",
-                d: "calculate"
-            },
-            correctAnswer: "d"
+            answers: ["1: package", "2: const", "3: function", "4: calculate"],
+            correctAnswer: 4
         }
     ];
-    //jQuery hooks for HTML elements
-    const questionContainer = $("div.questions");
-    const answerContainer = $("div.answers");
-    const resultsContanier = $("div.results");
+    
+    function startGame() {
 
-    //Beginning of the quiz
-    function startQuiz() {
-
-        //Store output
-        let qOutput = [];
+    }
         
-        quizQuestions.forEach(function(currentQuestion, questionNumber) {
-            let answers = [];
-
-            for(letter in currentQuestion.answers) {
-                //add button for each answer
-                answers.push(
-                    `<label><input class="answerButton" type="button" name="question${questionNumber}" value=${letter}">${letter} : 
-                    ${currentQuestion.answers[letter]}</label>`
-                );
-            }
-
-            //Put question and it's answers to the output
-            qOutput.push(
-                `<div class"question"> ${currentQuestion.question} </div>
-                <div class="answers"> ${answers.join('')} </div>`
-            );
-        });
-
-        questionContainer.innerHTML = qOutput.join('');
+    function displayText() {
+        
     }
-
-        function showAnwers() {
-
-        }
-
-
-
-    }
-
-
+    
 });
