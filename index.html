@@ -17,16 +17,26 @@
 </head>
 
 <body>
-    <h1>
+    <header>
         <p>Seconds Remaining:<span id="clock">60</span></p>
         <p id="highScores">View Highscores</p>
-    </h1>
+    </header>
+    <!-- Start Page -->
     <div class="container"
         <div class="beginningScreen">
-                <h1 class="card-title">JavaScript Quiz!</h1>
-                <h6 class="card-subtitle mb-2 text-muted">Select the best answer</h6>
-                <p class="card-text">You have 60 seconds to answer the questions. Answers are multiple choice and incorrect answers will take away 10 seconds. </p>
-            </div>
+            <h1 class="title">JavaScript Quiz!</h1>
+                <h6>Select the best answer</h6>
+                <p>You have 60 seconds to answer the questions. Answers are multiple choice and incorrect answers will take away 10 seconds. </p>
+                <button type="button" id="startQuiz">Start the Quiz!</button>
+            </div>            
+        </div>
+
+        <!--   This is where the questions will display-->
+        <div class="quizArea"></div>
+
+        <!--   Correct/Incorrect    -->
+        <div class="answerResult">
+            <p id="correctIncorrect"></p>
         </div>
     </div>
     <script src="./script.js"></script>
