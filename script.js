@@ -160,6 +160,24 @@ $(document).ready(function () {
         })
     };
 
+    function setScore() {
+        let userName = String(initialsInput.value).toUpperCase();
+        newScore = {
+            "name": userName,
+            "score": finalScore
+        };
+        userScores.push(newScore);
+        localStorage.setItem("userScores", JSON.stringify(userScores));
+    };
+
+    function getScore() {
+        if (localStorage.getItem('userScores') !== null) {
+            userScores = JSON.parse(localStorage.getItem('userScores'));
+        } else {
+            userScores = [];
+        };
+    };
+
 
 
 
