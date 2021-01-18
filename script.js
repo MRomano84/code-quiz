@@ -7,6 +7,15 @@ $(document).ready(function () {
     let highscores = document.getElementById("highscores");
     let beginningScreen = document.getElementsByClassName(".beginningScreen");
     let quizArea = document.getElementsByClassName(".quizArea");
+    let header = document.getElementById("header");
+    let startQuiz = document.getElementById("startQuiz");
+    let timer = document.getElementById("clock");
+    let answerResult = document.getElementsByClassName("answerResult");
+    let correctIncorrect = document.getElementById("correctIncorrect");
+    let newScore;
+    let finalScore;
+    let userScore;
+    let callCountdown;
 
 
 
