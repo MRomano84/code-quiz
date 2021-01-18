@@ -56,7 +56,7 @@ $(document).ready(function () {
     });
 
     viewScores.addEventListener('click', function () {
-        hideStart[0].style.display = 'none';
+        hideStart[0].style.display = "none";
         getScore();
         scoreBoard();
     });
@@ -84,7 +84,7 @@ $(document).ready(function () {
                 button.innerHTML = quizQuestions[quizArrayIndex].answers[i];
                 button.setAttribute('data-index', i);
                 button.classList.add('selectionBtn');
-                quizSection[0].append(button);
+                quizArea[0].append(button);
             };
         } else {
             endGame();
@@ -178,8 +178,10 @@ $(document).ready(function () {
         };
     };
 
+    //Need scoreboard function...
+    function scoreboard();{
 
+    };
 
-
-
+    
 });
