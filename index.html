@@ -28,7 +28,22 @@
             </div>
         </div>
     </div>
-    <!-- Start Page -->
+    <!-- Card for quiz content -->
+    <div id="quiz-intro" class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h1 class="card-title">Code Quiz</h1>
+                    <p class="card-text"> To begin, push the start button below. When you select the correct answer, you
+                        will move onto the next question.
+                        When you select the wrong answer, 15 seconds will be removed from the timer. Goodluck!
+                    </p>
+                    <button onclick="startQuiz()" class="button btn-primary">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Page
     <div class="container"
         <div class="beginningScreen">
             <h1 class="title">JavaScript Quiz!</h1>
@@ -36,15 +51,35 @@
                 <p>You have 60 seconds to answer the questions. Answers are multiple choice and incorrect answers will take away 10 seconds. </p>
                 <button type="button" id="startQuiz">Start the Quiz!</button>
             </div>            
-        </div>
+        </div> -->
 
-        <!--   This is where the questions will display-->
-        <div class="quizArea"></div>
-
-        <!--   Correct/Incorrect    -->
-        <div class="answerResult">
-            <p id="correctIncorrect"></p>
+    <!-- Quiz Questions -->
+    <div id="quiz-questions" class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h4 id="question" class="card-title"></h4>
+                    <div class="d-grid gap-2 col-4 mx-auto">
+                        <button onclick="checkQuestion('1')" id="answer1" class="btn btn-primary"
+                            type="button"></button>
+                        <button onclick="checkQuestion('2')" id="answer2" class="btn btn-primary"
+                            type="button"></button>
+                        <button onclick="checkQuestion('3')" id="answer3" class="btn btn-primary"
+                            type="button"></button>
+                        <button onclick="checkQuestion('4')" id="answer4" class="btn btn-primary"
+                            type="button"></button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <!-- This is where the questions will display
+        <div class="quizArea"></div> -->
+
+    <!--   Correct/Incorrect    -->
+    <div class="answerResult">
+        <p id="correctIncorrect"></p>
+    </div>
     </div>
     <script src="./script.js"></script>
 </body>
