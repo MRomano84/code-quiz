@@ -56,12 +56,6 @@ function startQuiz() {
     document.getElementById("score").style.display = "block";
     renderQuestion();
 }
-// startQuiz.addEventListener("click", function() {
-    //     quizArrayIndex = 0;
-//     hideStart[0].style.display = "none";
-//     timer();
-//     showQuestion();
-// });
 
 function renderQuestion() {
     let q = questions[currentQuestionIndex];
