@@ -6,6 +6,14 @@ body {
     text-align: center;
 }
 
-.hide {
+div#quiz-questions {
+    display: none;
+}
+
+div#quiz-end {
+    display: none;
+}
+
+div#highscore {
     display: none;
 }
