@@ -2,49 +2,54 @@
 $(document).ready(function () {
 
     //initial Variables 
-    let quizArrayIndex;
-    let remainingTime = 60;
-    let highscores = document.getElementById("highscores");
-    let beginningScreen = document.getElementsByClassName(".beginningScreen");
-    let quizArea = document.getElementsByClassName(".quizArea");
-    let header = document.getElementById("header");
-    let startQuiz = document.getElementById("startQuiz");
-    let clock = document.getElementById("clock");
-    let answerResult = document.getElementsByClassName("answerResult");
-    let correctIncorrect = document.getElementById("correctIncorrect");
-    let newScore;
-    let finalScore;
-    let userScore;
-    let callCountdown;
+    let lastQuestionIndex = questions.length - 1;
+    let currentQuestionIndex = 0;
+    let score = 75;
+    let timer;
 
 
 
     //Array of quiz questions, possible answers and the correct answer.
-    const quizQuestions = [
+    const questions = [
         {
             question: "Inside which HTML element do we put the JavaScript?",
-            answers: ["1: <js>","2: <javascript>", "3: <script >", "4: <scripting>"],
-            correctAnswer: 3
+            answer1: "1: <js>",
+            answer2: "2: <javascript>",
+            answer3: "3: <script >",
+            answer4: "4: <scripting>",
+            correctAnswer: "3"
         },
         {
             question: "Which operator is used to assign a value to a variable?",
-            answers: ["1: *", "2: +", "3: %", "4: ="],
-            correctAnswer: 4
+            answer1: "1: *",
+            answer2: "2: +",
+            answer3: "3: %",
+            answer4: "4: =",
+            correctAnswer: "4"
         },
         {
             question: "How can you add a comment in JavaScript?",
-            answers: ["1: 'Comment'", "2: //Comment", "3: <!--Comment-->", "4: **Comment**"],
-            correctAnswer: 2
+            answer1: "1: 'Comment'",
+            answer2: "2: //Comment",
+            answer3: "3: <!--Comment-->",
+            answer4: "4: **Comment**",
+            correctAnswer: "2"
         },
         {
             question: "Which event occurs when the user clicks on an HTML element?",
-            answers: ["1: onclick", "2: onmouseclick","3: onmouseover", "4: onchange"],
-            correctAnswer: 1
+            answer1: "1: onclick",
+            answer2: "2: onmouseclick",
+            answer3: "3: onmouseover",
+            answer4: "4: onchange",
+            correctAnswer: "1"
         },
         {
             question: "Which of these words are not reserved in JavaScript?",
-            answers: ["1: package", "2: const", "3: function", "4: calculate"],
-            correctAnswer: 4
+            answer1: "1: package",
+            answer2: "2: const",
+            answer3: "3: function",
+            answer4: "4: calculate",
+            correctAnswer: "4"
         }
     ];
 
