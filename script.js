@@ -77,6 +77,30 @@ $(document).ready(function () {
         document.getElementById("answer4").innerHTML = questions[currentQuestionIndex].answer4;
     }
 
+    function checkQuestion(answer) {
+        if (questions[currentQuestionIndex].correct === answer) {
+            currentQuestionIndex++;
+        } else {
+            score = score - 15;
+            currentQuestionIndex++;
+        }
+        if (currentQuestionIndex > lastQuestionIndex) {
+            endGame();
+        } else {
+            renderQuestion();
+        }
+    }
+
+    function startTimer() {
+        score = 75;
+        timer = setInterval(function () {
+            document.getElementById("score").innerHTML = 'Time:' + score;
+            score--;
+            if (score <= 0) {
+                endGame();
+            }
+        }, 1000);
+    }
     // viewScores.addEventListener('click', function () {
     //     hideStart[0].style.display = "none";
     //     getScore();
