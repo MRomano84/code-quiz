@@ -101,6 +101,39 @@ $(document).ready(function () {
             }
         }, 1000);
     }
+    function endGame() {
+        clearInterval(timer);
+        document.getElementById("score").innerHTML = 'Time:' + score;
+        document.getElementById("quiz-end").style.display = 'inline';
+        document.getElementById("quiz-questions").style.display = 'none';
+        document.getElementById("your-score").innerHTML = 'Your Score: ' + score;
+    }
+    
+    function submitScore() {
+        document.getElementById("quiz-end").style.display = 'none';
+        document.getElementById("highscore").style.display = 'inline';
+        document.getElementById("score").style.display = 'none';
+        let highScores = localStorage.getItem("initials");
+        let initials = document.getElementById("initials").value;
+        if (highScores === null) {
+            highScores = JSON.stringify([
+                {
+                    initials: initials,
+                    score: score
+                }
+            ]);
+        } else {
+            let highScoresParsed = JSON.parse(highScores);
+            highScoresParsed.push({
+                initials: initials,
+                score: score
+            });
+            highScores = JSON.stringify(highScoresParsed);
+        }
+        localStorage.setItem("initials", highScores);
+        renderScores();
+        document.getElementById("initials").value = "";
+    }
     // viewScores.addEventListener('click', function () {
     //     hideStart[0].style.display = "none";
     //     getScore();
