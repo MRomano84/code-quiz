@@ -134,6 +134,41 @@ $(document).ready(function () {
         renderScores();
         document.getElementById("initials").value = "";
     }
+
+    function renderScores() {
+        document.getElementById("display-score").innerHTML = "";
+        let parsedScores = JSON.parse(localStorage.getItem("initials"));
+        if (parsedScores === null) {
+            document.getElementById("display-score").innerHTML = "";
+        } else {
+            parsedScores.sort((a, b) => {
+                return b.score - a.score;
+            });
+            parsedScores.forEach((score, index) => {
+                document.getElementById("display-score").innerHTML += index + 1 + ": " + score.initials + " " + score.score + "<br />";
+            });
+        }
+    }
+    
+    function clearScores() {
+        localStorage.clear();
+        renderScores();
+    }
+    
+    function goBack() {
+        document.getElementById("highscore").style.display = 'none';
+        document.getElementById("quiz-intro").style.display = 'inline';
+    }
+    
+    function viewScores() {
+        clearInterval(timer);
+        document.getElementById("quiz-intro").style.display = 'none';
+        document.getElementById("quiz-questions").style.display = 'none';
+        document.getElementById("quiz-end").style.display = 'none';
+        document.getElementById("score").style.display = 'none';
+        document.getElementById("highscore").style.display = 'inline';
+        renderScores();
+    }
     // viewScores.addEventListener('click', function () {
     //     hideStart[0].style.display = "none";
     //     getScore();
