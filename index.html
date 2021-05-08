@@ -76,11 +76,42 @@
     <!-- This is where the questions will display
         <div class="quizArea"></div> -->
 
-    <!--   Correct/Incorrect    -->
+
+    <!-- End Quiz Page -->
+    <div id="quiz-end" class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h1 class="card-title">Finished!</h1>
+                    <p id="your-score" class="card-text"></p>
+                    <div class="input-group mb-3">
+                        <input id="initials" type="text" class="form-control" placeholder="Enter Your Initials"
+                            aria-label="Enter Your Initials" aria-describedby="button-addon2">
+                        <button onclick="submitScore()" class="btn btn-outline-primary" type="button"
+                            id="submit-button">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Highscore Page -->
+    <div id="highscore" class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h1 class="card-title">Highscores</h1>
+                    <div id="display-score"></div>
+                    <button onclick="goBack()" class="button btn-primary">Go Back</button>
+                    <button onclick="clearScores()" class="button btn-primary">Clear Highscores</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Correct/Incorrect   
     <div class="answerResult">
         <p id="correctIncorrect"></p>
-    </div>
-    </div>
+    </div> -->
+
     <script src="./script.js"></script>
 </body>
 
